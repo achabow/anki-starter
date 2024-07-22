@@ -60,7 +60,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="w-full min-h-screen bg-gray-100">
       <header className="bg-red-600 shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 backdrop-blur-2xl">
           <h1 className="text-3xl font-bold text-black">Admin Dashboard - Subject Management</h1>
@@ -85,11 +85,12 @@ export default function AdminDashboard() {
                 <SubjectList
                   onEdit={handleEdit}
                   refreshTrigger={refreshTrigger}
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                 />
               </div>
             </div>
             {isFormVisible && (
-              <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+              <div className="bg-white shadow overflow-hidden sm:rounded-lg w-1/2">
                 <div className="px-4 py-5 sm:px-6">
                   <h2 className="text-xl font-semibold text-gray-900">
                     {selectedSubject ? 'Edit Subject' : 'Add New Subject'}
