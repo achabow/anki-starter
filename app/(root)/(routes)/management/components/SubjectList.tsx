@@ -7,6 +7,7 @@ import NotFound from '@/app/not-found'
 interface SubjectListProps {
   onEdit: (subject: Subject) => void;
   refreshTrigger: number;
+  className?: string;
 }
 
 export default function SubjectList({ onEdit, refreshTrigger }: SubjectListProps) {
