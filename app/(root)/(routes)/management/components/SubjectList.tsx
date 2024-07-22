@@ -39,15 +39,40 @@ export default function SubjectList({ onEdit, refreshTrigger }: SubjectListProps
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
       {subjects.map((subject) => (
-        <tr key={subject.id}>
-          <td className="px-6 py-4 whitespace-nowrap">{subject.name}</td>
-          <td className="px-6 py-4 whitespace-nowrap">{subject.value}</td>
+        <tr key={subject.id} className="hover:bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap">
-            <button onClick={() => onEdit(subject)} className="text-indigo-600 hover:text-indigo-900">Manage Subject
-            </button>
+            <div className="group relative">
+              <div className="text-sm font-medium text-gray-900 truncate max-w-xs">
+                {subject.name}
+              </div>
+              <div className="absolute z-10 invisible group-hover:visible bg-gray-800 text-white text-xs rounded py-1 px-2 left-0 bottom-full mb-2">
+                {subject.name}
+              </div>
+            </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <Link href={`/management/chapter/${subject.id}`} className="text-green-600 hover:text-green-900">
+            <div className="group relative">
+              <div className="text-sm text-gray-500 truncate max-w-xs">
+                {subject.value}
+              </div>
+              <div className="absolute z-10 invisible group-hover:visible bg-gray-800 text-white text-xs rounded py-1 px-2 left-0 bottom-full mb-2">
+                {subject.value}
+              </div>
+            </div>
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            <button
+              onClick={() => onEdit(subject)}
+              className="text-indigo-600 hover:text-indigo-900"
+            >
+              Manage Subject
+            </button>
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            <Link
+              href={`/management/chapter/${subject.id}`}
+              className="text-green-600 hover:text-green-900"
+            >
               Manage Chapters
             </Link>
           </td>
